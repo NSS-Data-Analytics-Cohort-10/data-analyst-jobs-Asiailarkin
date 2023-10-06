@@ -101,24 +101,27 @@ SELECT title
 FROM data_analyst_jobs
 WHERE LOWER (title) LIKE '%analyst%';
 
+-- 1669 jobs
+
 ----------------------------------------------
 
-SELECT COUNT(title)
+SELECT COUNT (DISTINCT (title))
 FROM data_analyst_jobs
 WHERE LOWER (title) LIKE '%analyst%';
 
--- 1669
+-- 774 unique jobs
+
 
 -- 12.	How many different job titles do not contain either the word ‘Analyst’ or the word ‘Analytics’? What word do these positions have in common?
 
-SELECT (title)
+SELECT DISTINCT(title)
 FROM data_analyst_jobs
 WHERE LOWER (title) NOT LIKE '%analyst%'
 	AND LOWER (title) NOT LIKE '%analytics%';
 	
 ---------------------------------------------------------
 	
-SELECT COUNT(title)
+SELECT DISTINCT (COUNT(title))
 FROM data_analyst_jobs
 WHERE LOWER (title) NOT LIKE '%analyst%'
 	AND LOWER (title) NOT LIKE '%analytics%';
